@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 .setMessage("确定删除 \"" + item.getTitle() + "\" 吗？")
                 .setPositiveButton("删除", (dialog, which) -> {
                     deleteTodo(item);
-                    cancelAlarm(item.getId());
+                    cancelAlarm(this, item.getId());
                     loadTodos();
                     Toast.makeText(this, "已删除", Toast.LENGTH_SHORT).show();
                 })
