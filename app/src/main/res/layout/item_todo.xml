@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#FFFFFF"
+    android:padding="12dp"
+    android:elevation="2dp">
+
+    <!-- 优先级指示条 -->
+    <View
+        android:id="@+id/priorityBar"
+        android:layout_width="4dp"
+        android:layout_height="match_parent"
+        android:background="#44aa44"/>
+
+    <!-- 内容区域 -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="待办标题"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:maxLines="2"/>
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2024-01-01 12:00"
+            android:textSize="12sp"
+            android:textColor="#2196F3"
+            android:drawableStart="@android:drawable/ic_lock_idle_alarm"
+            android:drawablePadding="4dp"
+            android:visibility="gone"/>
+    </LinearLayout>
+
+    <!-- 完成复选框 -->
+    <CheckBox
+        android:id="@+id/cbCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"/>
+
+</LinearLayout>

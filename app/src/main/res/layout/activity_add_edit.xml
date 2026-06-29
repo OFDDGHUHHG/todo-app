@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F5F5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- 标题栏 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="添加待办"
+            android:textSize="24sp"
+            android:textColor="#2196F3"
+            android:textStyle="bold"
+            android:paddingBottom="16dp"/>
+
+        <!-- 标题输入 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="标题"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="8dp"/>
+
+        <EditText
+            android:id="@+id/etTitle"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="输入待办标题"
+            android:maxLines="1"
+            android:padding="8dp"/>
+
+        <!-- 内容输入 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="内容（可选）"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etContent"
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:background="@android:drawable/edit_text"
+            android:hint="输入详细内容"
+            android:gravity="top"
+            android:padding="8dp"/>
+
+        <!-- 提醒时间 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="提醒时间"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tvReminder"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="#E3F2FD"
+            android:text="点击设置提醒时间"
+            android:textColor="#1976D2"
+            android:textSize="16sp"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:clickable="true"/>
+
+        <!-- 优先级 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="优先级"
+            android:textSize="14sp"
+            android:textColor="#666666"
+            android:paddingTop="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/rgPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <RadioButton
+                android:id="@+id/rbLow"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="低"
+                android:checked="true"/>
+
+            <RadioButton
+                android:id="@+id/rbMedium"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="中"/>
+
+            <RadioButton
+                android:id="@+id/rbHigh"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:text="高"/>
+        </RadioGroup>
+
+        <!-- 按钮区域 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="24dp">
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="取消"
+                android:background="#EEEEEE"
+                android:textColor="#666666"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="48dp"
+                android:text="保存"
+                android:background="#2196F3"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
