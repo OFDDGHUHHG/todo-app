@@ -528,11 +528,14 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // 创建final引用用于lambda
+        final File importFile = latestFile;
+
         // 确认导入
         new AlertDialog.Builder(this)
             .setTitle("确认导入")
-            .setMessage("找到备份文件：" + latestFile.getName() + "\n\n导入将覆盖现有数据，是否继续？")
-            .setPositiveButton("导入", (dialog, which) -> doImportFile(latestFile))
+            .setMessage("找到备份文件：" + importFile.getName() + "\n\n导入将覆盖现有数据，是否继续？")
+            .setPositiveButton("导入", (dialog, which) -> doImportFile(importFile))
             .setNegativeButton("取消", null)
             .show();
     }
