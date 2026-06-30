@@ -403,13 +403,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.menu_backup) {
+        if (id == R.id.action_backup) {
             backupData();
             return true;
-        } else if (id == R.id.menu_import) {
+        } else if (id == R.id.action_import) {
             importData();
             return true;
-        } else if (id == R.id.menu_about) {
+        } else if (id == R.id.action_about) {
             showAbout();
             return true;
         }
@@ -629,7 +629,11 @@ public class MainActivity extends AppCompatActivity {
 
             tvTitle.setText(item.getTitle());
             tvTitle.setTextColor(item.isCompleted() ? 0xFF888888 : 0xFF333333);
-            tvTitle.setStrikeThruText(item.isCompleted());
+            if (item.isCompleted()) {
+                tvTitle.setPaintFlags(tvTitle.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+            } else {
+                tvTitle.setPaintFlags(tvTitle.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
+            }
 
             // 显示内容
             if (item.getContent() != null && !item.getContent().isEmpty()) {

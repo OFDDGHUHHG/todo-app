@@ -55,6 +55,12 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
         values.put("priority", item.getPriority());
         return db.insert(TABLE_NAME, null, values);
     }
+    
+    // 添加待办事项（便捷方法）
+    public long addTodo(String title, String content, long reminderTime) {
+        TodoItem item = new TodoItem(title, content, reminderTime, 0);
+        return addTodo(item);
+    }
 
     // 更新待办事项
     public int updateTodo(TodoItem item) {
@@ -67,6 +73,17 @@ public class TodoDatabaseHelper extends SQLiteOpenHelper {
         values.put("priority", item.getPriority());
         return db.update(TABLE_NAME, values, "id = ?", 
                 new String[]{String.valueOf(item.getId())});
+    }
+    
+    // 更新待办事项（便捷方法）
+    public int updateTodo(int id, String title, String content, long reminderTime) {
+        SQLiteDatabase db = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("title", title);
+        values.put("content", content != null ? content : "");
+        values.put("reminder_time", reminderTime);
+        return db.update(TABLE_NAME, values, "id = ?", 
+                new String[]{String.valueOf(id)});
     }
 
     // 删除待办事项
