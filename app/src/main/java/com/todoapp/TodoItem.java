@@ -23,6 +23,16 @@ public class TodoItem {
         this.createdTime = System.currentTimeMillis();
     }
 
+    public TodoItem(int id, String title, String content, long reminderTime, int priority, boolean completed) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.reminderTime = reminderTime;
+        this.priority = priority;
+        this.completed = completed;
+        this.createdTime = System.currentTimeMillis();
+    }
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
