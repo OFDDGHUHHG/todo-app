@@ -175,7 +175,7 @@ public class AddEditTodoActivity extends Activity {
             Toast.makeText(this, "已更新", Toast.LENGTH_SHORT).show();
         } else {
             // 新增
-            int newId = dbHelper.addTodo(title, note, reminderTime);
+            long newId = dbHelper.addTodo(title, note, reminderTime);
             
             // 设置闹钟
             if (reminderTime > 0) {
@@ -198,7 +198,7 @@ public class AddEditTodoActivity extends Activity {
     /**
      * 设置闹钟提醒
      */
-    private void setAlarm(int todoId, String title, long time) {
+    private void setAlarm(long todoId, String title, long time) {
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this, AlarmReceiver.class);
         intent.putExtra("todo_id", todoId);
