@@ -10,6 +10,7 @@ public class TodoItem {
     private boolean completed;
     private long reminderTime;
     private int priority;
+    private long createdTime;
 
     public TodoItem() {}
 
@@ -19,6 +20,7 @@ public class TodoItem {
         this.reminderTime = reminderTime;
         this.priority = priority;
         this.completed = false;
+        this.createdTime = System.currentTimeMillis();
     }
 
     public int getId() { return id; }
@@ -38,4 +40,11 @@ public class TodoItem {
 
     public int getPriority() { return priority; }
     public void setPriority(int priority) { this.priority = priority; }
+
+    public long getCreatedTime() { return createdTime; }
+    public void setCreatedTime(long createdTime) { this.createdTime = createdTime; }
+
+    public boolean hasReminder() {
+        return reminderTime > 0;
+    }
 }
