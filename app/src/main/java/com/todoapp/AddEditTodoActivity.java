@@ -205,7 +205,7 @@ public class AddEditTodoActivity extends Activity {
         intent.putExtra("todo_title", title);
         
         PendingIntent pendingIntent = PendingIntent.getBroadcast(
-            this, todoId, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+            this, (int)todoId, intent, PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
         
         // 使用精确闹钟
         alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, time, pendingIntent);
